@@ -21,7 +21,7 @@ public extension Double {
     }
 }
 
-extension Optional where Wrapped == Double {
+public extension Optional where Wrapped == Double {
     var stringValue: String {
         get {
             guard let unwrapped = self else {
