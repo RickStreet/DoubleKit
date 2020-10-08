@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import StringKit
 
 public extension Double {
     
@@ -17,5 +18,19 @@ public extension Double {
         }
         let divisor = pow(10.0, Double(digits) - ceil(log10(fabs(self))))
         return (self * divisor).rounded() / divisor
+    }
+}
+
+extension Optional where Wrapped == Double {
+    var stringValue: String {
+        get {
+            guard let unwrapped = self else {
+                return ""
+            }
+            return String(unwrapped)
+        }
+        set {
+            self = newValue.doubleValue
+        }
     }
 }
