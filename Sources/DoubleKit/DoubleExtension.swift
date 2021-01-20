@@ -24,6 +24,22 @@ public extension Double {
         let divisor = pow(10.0, Double(decimals))
         return (self * divisor).rounded() / divisor
     }
+    
+    var precisionString: String {
+        if self == 0 {
+            return "0"
+        } else {
+            var decimals = 0
+            let size = Int(log10(abs(self)))
+            if size > 0 {
+                decimals = 15 - size
+            } else {
+                decimals = 16 - size
+            }
+            return  String(format: "%.\(decimals)f", self)
+        }
+    }
+
 }
 
 /*
