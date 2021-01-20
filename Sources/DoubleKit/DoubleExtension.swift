@@ -19,8 +19,14 @@ public extension Double {
         let divisor = pow(10.0, Double(digits) - ceil(log10(fabs(self))))
         return (self * divisor).rounded() / divisor
     }
+    
+    func roundTo(decimals: Int) -> Double {
+        let divisor = pow(10.0, Double(decimals))
+        return (self * divisor).rounded() / divisor
+    }
 }
 
+/*
 public extension Optional where Wrapped == Double {
     var stringValue: String {
         get {
@@ -34,3 +40,4 @@ public extension Optional where Wrapped == Double {
         }
     }
 }
+*/
