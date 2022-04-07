@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import StringKit
+// import StringKit
 
 public extension Double {
     
@@ -41,19 +41,3 @@ public extension Double {
     }
 
 }
-
-/*
-public extension Optional where Wrapped == Double {
-    var stringValue: String {
-        get {
-            guard let unwrapped = self else {
-                return ""
-            }
-            return String(unwrapped)
-        }
-        set {
-            self = newValue.doubleValue
-        }
-    }
-}
-*/
