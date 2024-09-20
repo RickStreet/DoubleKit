@@ -20,11 +20,14 @@ public extension Double {
         return (self * divisor).rounded() / divisor
     }
     
+    /// Round Double to number of decimals
+    /// - Parameter decimals: number of decimals to use
     func roundTo(decimals: Int) -> Double {
         let divisor = pow(10.0, Double(decimals))
         return (self * divisor).rounded() / divisor
     }
     
+    /// 16 digit string of Double
     var precisionString: String {
         if self == 0 {
             return "0"
